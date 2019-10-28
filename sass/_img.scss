@@ -17,13 +17,8 @@
   }
 }
 .ratio-1to1 {
-  width: 60%;
   height: 0;
-  padding-bottom: 60%;
-  @media(min-width: $small) {
-    width: 30%;
-    padding-bottom: 30%;
-  }
+  padding-bottom: 300px;
 }
 .ratio-1to1-square {
   @media(min-width: $small) {

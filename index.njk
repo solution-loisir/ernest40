@@ -1,0 +1,16 @@
+---
+layout: base-layout.html
+title: Ernest turns 40! 🧨
+---
+<section>
+    <h1>Ernest, you've been entitle a mission</h1>
+    <p>The individual in the picture above is known to be a dangerous secret 
+    agent from the UK and as been causing much disturbance lately. 
+    We need to take him down, but first, you will have to find as 
+    much as possible about this agent. If you get the right answers to all of the 
+    questions bellow, you will gain access to some sensitive data that will 
+    help you fulfill your mission. Your country is counting on you.</p>
+</section>
+{% for q in quiz %}
+<p>{{ q.Question }}</p>
+{% endfor %}

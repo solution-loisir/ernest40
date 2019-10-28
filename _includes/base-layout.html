@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <link rel="stylesheet" type="text/css" href="{{ '/style/index.css' | url }}" />
+    <link rel="icon" type="image/png" href="#" sizes="16x16" />
+    <link rel="icon" type="image/png" href="#" sizes="32x32" />
+    <link rel="icon" type="image/png" href="#" sizes="96x96" />
+    <script defer src="{{ '/script/index.js' | url }}"></script>
+    <link rel="canonical" href="{{ page.url | url }}" />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:image" content="{{ ogImage }}" />
+    <meta property="og:image:alt" content="{{ ogImageAlt }}" />
+</head>
+<body>
+    <header class="header">
+        <h1>{{ title }}</h1>
+        <figure class="ratio-1to1">
+            <img class="round-photo" src="{{ './medias/bond.jpg' | url }}" alt="James Bond 007" />
+        </figure>
+    </header>
+    <main>
+        {{ content | safe }}
+    </main>
+</body>
+</html>
