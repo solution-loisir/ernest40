@@ -2,7 +2,7 @@
 layout: base-layout.html
 title: Ernest turns 40! 🧨
 ---
-<section>
+<section class="content">
     <h1>Ernest, you've been entitle a mission</h1>
     <p>The individual in the picture above is known to be a dangerous secret 
     agent from the UK and as been causing much disturbance lately. 
@@ -11,6 +11,25 @@ title: Ernest turns 40! 🧨
     questions bellow, you will gain access to some sensitive data that will 
     help you fulfill your mission. Your country is counting on you.</p>
 </section>
+
+<div class="quiz-section">
+<h2 class="content">Quiz</h2>
+<form class="content form">
 {% for q in quiz %}
-<p>{{ q.Question }}</p>
+<p class="bold">{{ q.Question }}</p>
+<div class="radio">
+{% for o in q.Options %}
+<label>
+<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" required />
+{{ o }}
+</label> 
 {% endfor %}
+</div>
+<button class="clue-btn" id="{{ q.ID2 }}">Show Hint</button>
+<p class="clue" id="{{ q.ID1 }}">{{ q.Clue }}</p>
+{% endfor %}
+<div class="submit-answers">
+<button id="submit-answers">Submit Answers</button>
+</div>
+</form>
+</div>

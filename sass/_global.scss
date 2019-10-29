@@ -14,6 +14,8 @@
     color: inherit;
 }
 body {
+    margin: inherit;
+    padding: inherit;
     font-size: 1.6rem;
     background-color: #fefefe;
 }
@@ -117,7 +119,7 @@ summary {
 .margin-auto {
     margin: auto;
 }
-section {
+.content {
     width: 80%;
     margin: auto;
     @media(min-width: $small) {

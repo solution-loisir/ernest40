@@ -3,6 +3,7 @@
   margin-bottom: 16px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 } 
+/*
 .rectangle-photo {
   border-radius: 2.3px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
@@ -16,10 +17,12 @@
     padding-bottom: 1 / 2 * 60%;
   }
 }
+*/
 .ratio-1to1 {
   height: 0;
   padding-bottom: 300px;
 }
+/*
 .ratio-1to1-square {
   @media(min-width: $small) {
       width: 100%;
@@ -52,3 +55,4 @@
     display: none;
   }
 }
+*/

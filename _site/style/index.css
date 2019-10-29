@@ -16,6 +16,8 @@
 }
 
 body {
+  margin: inherit;
+  padding: inherit;
   font-size: 1.6rem;
   background-color: #fefefe;
 }
@@ -151,12 +153,12 @@ summary {
   margin: auto;
 }
 
-section {
+.content {
   width: 80%;
   margin: auto;
 }
 @media (min-width: 37.5em) {
-  section {
+  .content {
     width: 66%;
   }
 }
@@ -167,71 +169,97 @@ section {
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+/*
 .rectangle-photo {
   border-radius: 2.3px;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
 }
-
 .ratio-2to1 {
   width: 100%;
   height: 0;
-  padding-bottom: 50%;
-}
-@media (min-width: 37.5em) {
-  .ratio-2to1 {
+  padding-bottom: 1 / 2 * 100%;
+  @media(min-width: $small) {
     width: 60%;
-    padding-bottom: 30%;
+    padding-bottom: 1 / 2 * 60%;
   }
 }
-
+*/
 .ratio-1to1 {
   height: 0;
   padding-bottom: 300px;
 }
 
-@media (min-width: 37.5em) {
-  .ratio-1to1-square {
-    width: 100%;
-    padding-bottom: 100%;
+/*
+.ratio-1to1-square {
+  @media(min-width: $small) {
+      width: 100%;
+      padding-bottom: 100%;
   }
 }
-
 .ratio-4to3 {
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 3 / 4 * 100%;
 }
-
 .ratio-2to3 {
   width: 100%;
   height: 0;
-  padding-bottom: 150%;
-}
-@media (min-width: 37.5em) {
-  .ratio-2to3 {
+  padding-bottom: 3 / 2 * 100%;
+  @media(min-width: $small) {
     width: 35%;
-    padding-bottom: 52.5%;
+    padding-bottom: 3 / 2 * 35%;
   }
 }
-
 .photo-grid {
   display: none;
-}
-@media (min-width: 37.5em) {
-  .photo-grid {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(3, 1fr);
+  @media(min-width: $small) {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
   }
 }
-
-@media (min-width: 37.5em) {
-  .img-small-screen {
+.img-small-screen {
+  @media(min-width: $small) {
     display: none;
   }
 }
-
+*/
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.quiz-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #eeeae8;
+}
+
+.form {
+  padding: 1rem 2rem;
+  background-color: #f8f6f5;
+  border-radius: 2.3px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+}
+
+.clue {
+  visibility: hidden;
+}
+
+.clue-visible {
+  visibility: visible;
+}
+
+.clue-btn {
+  margin-top: 1.6rem;
+}
+
+.submit-answers {
+  display: flex;
+  justify-content: center;
 }
