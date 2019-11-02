@@ -1,6 +1,6 @@
 ---
 layout: base-layout.html
-title: Ernest turns 40! 🧨
+title: Ernest 0040! 🧨
 ---
 <section class="content">
     <h1>Ernest, you've been entitle a mission</h1>
@@ -9,7 +9,7 @@ title: Ernest turns 40! 🧨
     We need to take him down, but first, you will have to find as 
     much as possible about this agent. If you get the right answers to all of the 
     questions bellow, you will gain access to some sensitive data that will 
-    help you fulfill your mission. Your country is counting on you.</p>
+    help you fulfill your mission. Agent 0040, your country is counting on you.</p>
 </section>
 
 <div class="quiz-section">
@@ -17,17 +17,14 @@ title: Ernest turns 40! 🧨
 <h2>Quiz</h2>
 <p class="bold">Please answer all the questions!</p>
 </div>
-<form class="content form">
+<form class="form">
 {% for q in quiz %}
 <h3>{{ q.QTitle }}</h3>
 <p class="bold">{{ q.Question }}</p>
 <div class="radio">
 {% for o in q.Options %}
-{% if loop.first %}
-<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" class="hide" checked />
-{% endif %}
-<label>
-<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" data-detail="{{ q.Details }}" data-answer="{{ q.Answer }}" data-qtitle="{{ q.QTitle }}" required />
+<label {% if loop.first %}class="hide"{% endif %}>
+<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" data-detail="{{ q.Details }}" data-answer="{{ q.Answer }}" data-qtitle="{{ q.QTitle }}" {% if loop.first %}class="hide" checked{% endif %} />
 {{ o }}
 </label> 
 {% endfor %}

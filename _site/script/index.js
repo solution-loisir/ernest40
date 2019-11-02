@@ -44,11 +44,12 @@ const showResult = event => {
     ]
     answers.forEach(a => {
         const right = a.dataset.answer === a.value;
+        const defaultValue = a.value === `You didn't answer the question.`;
         const h3 = elem('h3');
         const verdict = elem('p');
         h3.textContent = `Verifying your answer to ${a.dataset.qtitle}`;
-        verdict.textContent = right ? `Congratulation, "${a.value}" is the right answer!` : `Sorry "${a.value}" is not the right answer. Try again.`;
-        verdict.style.color = right ? 'green' : 'red';
+        verdict.textContent = defaultValue ? `${a.value} Please answer all de questions.` : right ? `Congratulation, "${a.value}" is the right answer!` : `Sorry "${a.value}" is not the right answer. Try again.`;
+        verdict.style.color = defaultValue ? 'initial' : right ? 'green' : 'red';
         if(right) score += 20;
         fragment.appendChild(h3);
         fragment.appendChild(verdict);

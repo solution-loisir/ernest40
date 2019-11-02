@@ -4,10 +4,15 @@
     background-color: rgb(238, 234, 232);
 }
 .form {
+    width: 95%;
+    margin: auto;
     padding: 1rem 2rem;
     background-color: rgb(248, 246, 245);
     border-radius: 2.3px;
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
+    @media(min-width: $small) {
+        width: 66%;
+    }
 }
 .radio {
     display: flex;
@@ -24,5 +29,13 @@
 }
 .submit-answers {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width: $small) {
+        flex-direction: initial;
+        justify-content: center;
+    }
+}
+.submit-answers * {
+    margin: 10px;
 }
