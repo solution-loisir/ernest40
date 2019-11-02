@@ -13,14 +13,21 @@ title: Ernest turns 40! 🧨
 </section>
 
 <div class="quiz-section">
-<h2 class="content">Quiz</h2>
+<div class="content">
+<h2>Quiz</h2>
+<p class="bold">Please answer all the questions!</p>
+</div>
 <form class="content form">
 {% for q in quiz %}
+<h3>{{ q.QTitle }}</h3>
 <p class="bold">{{ q.Question }}</p>
 <div class="radio">
 {% for o in q.Options %}
+{% if loop.first %}
+<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" class="hide" checked />
+{% endif %}
 <label>
-<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" required />
+<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" data-detail="{{ q.Details }}" data-answer="{{ q.Answer }}" data-qtitle="{{ q.QTitle }}" required />
 {{ o }}
 </label> 
 {% endfor %}
@@ -29,16 +36,12 @@ title: Ernest turns 40! 🧨
 <p class="clue" id="{{ q.ID1 }}">{{ q.Clue }}</p>
 {% endfor %}
 <div class="submit-answers">
-<button id="submit-answers">Submit Answers</button>
-<button type="reset">Reset</button>
+<button type="submit" id="submit-answers">Submit Answers</button>
+<button type="reset" id="reset-btn">Reset</button>
 </div>
 </form>
 </div>
-<section class="result-section">
-<h2 id="your-result">Your result</h2>
-<div id="result-1"></div>
-<div id="result-2"></div>
-<div id="result-3"></div>
-<div id="result-4"></div>
-<div id="result-5"></div>
+<section class="content">
+<h2 id="your-result">Your result <span id="percentage"></span></h2>
+<div id="result"></div>
 </section>
