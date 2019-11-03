@@ -107,4 +107,6 @@ secretBtn.addEventListener('click', event => {
     resultTitle.classList.add('hide');
     //Showing secret section
     secret.classList.remove('hide');
+    //Going to your-result section.
+    window.location = '#result-section';
 });
