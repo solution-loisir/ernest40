@@ -1,44 +1,10 @@
 ---
-layout: base-layout.html
+layout: form.njk
 title: Ernest 0040! 🧨
 ---
-<section class="content">
-    <h1>Ernest, you've been entitle a mission</h1>
-    <p>The individual in the picture above is known to be a dangerous secret 
-    agent from the UK and as been causing much disturbance lately. 
-    We need to take him down, but first, you will have to find as 
-    much as possible about this agent. If you get the right answers to all of the 
-    questions bellow, you will gain access to some sensitive data that will 
-    help you fulfill your mission. Agent 0040, your country is counting on you.</p>
-</section>
-
-<div class="quiz-section">
-<div class="content">
-<h2>Quiz</h2>
-<p class="bold">Please answer all the questions!</p>
-</div>
-<form class="form">
-{% for q in quiz %}
-<h3>{{ q.QTitle }}</h3>
-<p class="bold">{{ q.Question }}</p>
-<div class="radio">
-{% for o in q.Options %}
-<label {% if loop.first %}class="hide"{% endif %}>
-<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" data-detail="{{ q.Details }}" data-answer="{{ q.Answer }}" data-qtitle="{{ q.QTitle }}" {% if loop.first %}class="hide" checked{% endif %} />
-{{ o }}
-</label> 
-{% endfor %}
-</div>
-<button class="clue-btn" id="{{ q.ID2 }}">Show Hint</button>
-<p class="clue" id="{{ q.ID1 }}">{{ q.Clue }}</p>
-{% endfor %}
-<div class="submit-answers">
-<button type="submit" id="submit-answers">Submit Answers</button>
-<button type="reset" id="reset-btn">Reset</button>
-</div>
-</form>
-</div>
-<section class="content">
-<h2 id="your-result">Your result <span id="percentage"></span></h2>
-<div id="result"></div>
+<section id="secret-section" class="hide">
+<h2>Joyeux anniversaire Ernest!! 🍾</h2>
+<p>Pour tes 40 ans sous le thème de James Bond, je souhaîtais faire quelque chose de spécial. 
+J'ai alors créé ce petit jeux pour souligner ce passage et s'amuser un peu! Aussi, tu trouveras 
+plus bas quelques témoignages de gens qui t'aime. 😉</p>
 </section>

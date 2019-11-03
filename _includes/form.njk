@@ -1,0 +1,35 @@
+---
+layout: explaination.html
+---
+<div class="quiz-section">
+<div class="content">
+<h2>Quiz</h2>
+<p class="bold">Please answer all the questions!</p>
+</div>
+<form class="form">
+{% for q in quiz %}
+<h3>{{ q.QTitle }}</h3>
+<p class="bold">{{ q.Question }}</p>
+<div class="radio">
+{% for o in q.Options %}
+<label {% if loop.first %}class="hide"{% endif %}>
+<input type="radio" name="{{ q.ID1 }}" value="{{ o }}" data-detail="{{ q.Details }}" data-answer="{{ q.Answer }}" data-qtitle="{{ q.QTitle }}" {% if loop.first %}class="hide" checked{% endif %} />
+{{ o }}
+</label> 
+{% endfor %}
+</div>
+<button class="clue-btn" id="{{ q.ID2 }}">Show Hint</button>
+<p class="clue" id="{{ q.ID1 }}">{{ q.Clue }}</p>
+{% endfor %}
+<div class="submit-answers">
+<button type="submit" id="submit-answers">Submit Answers</button>
+<button type="reset" id="reset-btn">Reset</button>
+</div>
+</form>
+</div>
+<section id="result-section" class="content">
+<h2 id="your-result">Your result <span id="percentage"></span></h2>
+<button id="secret" class="hide">Click to show secret info</button>
+<div id="result"></div>
+{{ content | safe }}
+</section>

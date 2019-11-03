@@ -11,8 +11,7 @@ module.exports = config => {
     //Passing assets as is to _site directory
     const assets = [
         'medias',
-        'script',
-        '_data'
+        'script'
     ]
     assets.forEach(asset => config.addPassthroughCopy(asset));
 
