@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(230, 243, 255);
+    color: #000;
+}
+footer * {
+   margin: 5px;
+}

@@ -285,3 +285,20 @@ summary {
 .submit-answers * {
   margin: 10px;
 }
+
+.result-section {
+  min-height: 50vh;
+}
+
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #e6f3ff;
+  color: #000;
+}
+
+footer * {
+  margin: 5px;
+}
