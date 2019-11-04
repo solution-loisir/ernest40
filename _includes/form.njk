@@ -3,12 +3,12 @@ layout: explaination.html
 ---
 <div class="quiz-section">
 <div class="content">
-<h2>Quiz</h2>
+<h1>Quiz</h1>
 <p class="bold">Please answer all the questions!</p>
 </div>
 <form class="form">
 {% for q in quiz %}
-<h3>{{ q.QTitle }}</h3>
+<h2>{{ q.QTitle }}</h2>
 <p class="bold">{{ q.Question }}</p>
 <div class="radio">
 {% for o in q.Options %}
@@ -28,7 +28,7 @@ layout: explaination.html
 </form>
 </div>
 <section id="result-section" class="content result-section">
-<h2 id="your-result">Your result <span id="percentage"></span></h2>
+<h1 id="your-result">Your result <span id="percentage"></span></h1>
 <button id="secret" class="hide">Click to show secret info</button>
 <div id="result"></div>
 {{ content | safe }}

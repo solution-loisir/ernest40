@@ -3,9 +3,17 @@ layout: form.njk
 title: Ernest 0040! 🧨
 ---
 <section id="secret-section" class="hide">
-<h2>Joyeux anniversaire Ernest!! 🍾</h2>
-<p>Pour tes 40 ans sous le thème de James Bond, je souhaîtais faire quelque chose de spécial. 
-J'ai alors créé ce petit jeux pour souligner ce passage et s'amuser un peu! Aussi, tu trouveras 
+<h1>Joyeux anniversaire Ernest!! 🍾 🥳</h1>
+<p>Pour tes 40 ans sous le thème de James Bond, je voulais faire quelque chose de spécial. 
+J'ai alors créé ce petit jeux pour souligner ton anniversaire et s'amuser un peu! Aussi, tu trouveras 
 plus bas quelques témoignages de gens qui t'aime. 😉</p>
-<div>Témoignages à venir...</div>
+<h2>Témoignages 🌈 🧡</h2>
+{% for T in testimony %}
+<div class="card">
+<blockquote>
+{{ T['Testimony / Témoignage'] }}
+</blockquote>
+<p>⭐ {{ T['Name / Nom'] }}</p>
+</div>
+{% endfor %}
 </section>

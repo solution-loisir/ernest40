@@ -29,15 +29,15 @@ h1 {
     }
 }
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     @media(min-width: $small) {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 }
 h3 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     @media(min-width: $small) {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 }
 p, li {
@@ -62,32 +62,25 @@ img, object {
     max-width: 100%; 
     height: auto;
 }
-blockquote p, blockquote p a {
+blockquote {
     font-size: 1.725rem;
     line-height: 1.5em;
     word-spacing: 0.3em;
-    color: #4353ff;
-    font-weight: 600;
-    margin: 1.4em 0;
     text-align: left;
     page-break-inside: avoid;
     @media(min-width: 321px) {
         font-size: 2rem;
     }
-    @media(min-width: $large) {
-        font-size: 2.4rem;
-        margin: 0;
-    }
 }
-blockquote p::before {
+blockquote::before {
     content: "« ";
 }
-blockquote p::after {
+blockquote::after {
     content: " »";
 }
 hr {
-    color: #165bb9;
-    background-color: #165bb9;
+    color: inherit;
+    background-color: inherit;
     height: 2px;
     border-radius: 2px;
 }
@@ -107,17 +100,8 @@ code {
 summary {
     outline: none;
 }
-.color-white {
-    color: white;
-}
 .bold {
     font-weight: 600;
-}
-.margin-bottom-0 {
-    margin-bottom: 0;
-}
-.margin-auto {
-    margin: auto;
 }
 .content {
     width: 80%;

@@ -9,13 +9,13 @@
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
     <script defer src="{{ '/script/index.js' | url }}"></script>
-    <link rel="canonical" href="{{ page.url | url }}" />
+    <link rel="canonical" href="https://0040.netlify.com{{ page.url | url }}" />
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:url" content="{{ page.url | url }}" />
+    <meta property="og:url" content="https://0040.netlify.com{{ page.url | url }}" />
     <meta property="og:image" content="{{ ogImage }}" />
     <meta property="og:image:alt" content="{{ ogImageAlt }}" />
 </head>
@@ -24,14 +24,19 @@
         <h1>{{ title }}</h1>
         <figure class="ratio-1to1">
             <img class="round-photo" src="{{ './medias/bond.jpg' | url }}" alt="James Bond 007" />
+            <figcaption>Target 007</figcaption>
         </figure>
     </header>
     <main>
         {{ content | safe }}
     </main>
     <footer>
-        <p>© 2019 This webpage has been hand coded with love for Ernest 40th birthday!</p>
-        <p>Most sources from <a href="https://en.wikipedia.org/wiki/Portrayal_of_James_Bond_in_film">Wikipedia</a>.</p>
+        <div class="credit">
+            <p>© 2019</p>
+            <p>This webpage has been coded with love</p> 
+            <p>for Ernest 40th birthday!</p>
+        </div>
+        <p>Most sources from <a href="https://en.wikipedia.org/wiki/Portrayal_of_James_Bond_in_film">Wikipedia</a></p>
     </footer>
 </body>
 </html>

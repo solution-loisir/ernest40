@@ -68,13 +68,13 @@ resultBtn.addEventListener('click', event => {
     answers.forEach(a => {
         const right = a.dataset.answer === a.value;
         const noAnswer = a.value === `You didn't answer the question.`;
-        const h3 = elem('h3');
+        const h2 = elem('h2');
         const verdict = elem('p');
-        h3.textContent = `Verifying your answer to ${a.dataset.qtitle}`;
+        h2.textContent = `Verifying your answer to ${a.dataset.qtitle}`;
         verdict.textContent = noAnswer ? `${a.value} Please answer all the questions.` : right ? `Congratulation, "${a.value}" is the right answer!` : `Sorry "${a.value}" is not the right answer. Try again.`;
         verdict.style.color = noAnswer ? 'initial' : right ? 'green' : 'red';
         if(right) score += 20;
-        render(fragment, h3);
+        render(fragment, h2);
         render(fragment, verdict);
         if(a.dataset.detail) {
             if(right) {
