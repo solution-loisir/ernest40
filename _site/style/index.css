@@ -67,6 +67,11 @@ a:active {
 nav a {
   text-decoration: none;
   margin: 12px 10px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+nav a:hover, nav a:active {
+  text-decoration: underline;
 }
 
 nav ul {

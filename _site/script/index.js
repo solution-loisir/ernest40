@@ -18,6 +18,7 @@ const resultTitle = getElement('#your-result');
 const result = getElement('#result');
 const percent = getElement('#percentage');
 const form = getElement('.form');
+const trophy = getElement('#trophy');
 const secret = getElement('#secret-section');
 
 //Clue code
@@ -81,7 +82,8 @@ resultBtn.addEventListener('click', event => {
     render(fragment, scoreNode);
     render(percent, fragment);
     //If score variable equals 100 then show secret button else hide it.
-    score === 100 ? secretBtn.classList.remove('hide') : secretBtn.classList.add('hide'); 
+    score === 100 ? secretBtn.classList.remove('hide') : secretBtn.classList.add('hide');
+    score === 100 ? trophy.classList.remove('hide') : trophy.classList.add('hide'); 
 });
 //Reset button action    
 resetBtn.addEventListener('click', () => {

@@ -8,7 +8,9 @@
     <link rel="icon" type="image/png" href="#" sizes="16x16" />
     <link rel="icon" type="image/png" href="#" sizes="32x32" />
     <link rel="icon" type="image/png" href="#" sizes="96x96" />
+    {%- if page.url === '/' | url %}
     <script defer src="{{ '/script/index.js' | url }}"></script>
+    {% endif -%}
     <link rel="canonical" href="https://0040.netlify.com{{ page.url | url }}" />
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}" />
@@ -23,8 +25,7 @@
     <header class="header">
         <h1>{{ title }}</h1>
         <figure class="ratio-1to1">
-            <img class="round-photo" src="{{ './medias/bond.jpg' | url }}" alt="James Bond 007" />
-            <figcaption>Target 007</figcaption>
+            <img class="round-photo" src="{{ '/medias/bond.jpg' | url }}" alt="James Bond 007" />
         </figure>
     </header>
     <main>

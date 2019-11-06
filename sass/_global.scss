@@ -52,6 +52,11 @@ a {
 nav a {
     text-decoration: none;
     margin: 12px 10px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    &:hover, &:active {
+        text-decoration: underline;
+    }
 }
 nav ul {
     list-style: none;
