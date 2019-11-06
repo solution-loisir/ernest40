@@ -12,6 +12,7 @@
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1), -2px 0px 4px 0 rgba(0, 0, 0, 0.1);
     @media(min-width: $small) {
         width: 66%;
+        max-width: 792px;
     }
 }
 .radio {

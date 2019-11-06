@@ -139,6 +139,7 @@ summary {
 @media (min-width: 37.5em) {
   .content {
     width: 66%;
+    max-width: 792px;
   }
 }
 
@@ -180,6 +181,7 @@ summary {
 @media (min-width: 37.5em) {
   .form {
     width: 66%;
+    max-width: 792px;
   }
 }
 
@@ -230,6 +232,11 @@ summary {
 }
 .card p {
   margin-left: 10px;
+}
+@media (min-width: 75em) {
+  .card {
+    width: 66%;
+  }
 }
 
 footer {

@@ -104,10 +104,11 @@ summary {
     font-weight: 600;
 }
 .content {
-    width: 80%;
+    width: 80%; 
     margin: auto;
     @media(min-width: $small) {
         width: 66%;
+        max-width: 792px;
     }
 }
 .hide {
