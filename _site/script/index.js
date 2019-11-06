@@ -1,5 +1,6 @@
 //DOM util functions
-const getElement = classOrId => document.querySelector(classOrId);
+const getElement = (classOrId, {from = document} = {}) => from.querySelector(classOrId);
+const getAll = (classOrId, {from = document} = {}) => from.querySelectorAll(classOrId);
 const elem = element => document.createElement(element);
 const render = (where, what) => where.appendChild(what);
 const clean = (...where) => {
@@ -40,18 +41,8 @@ resultBtn.addEventListener('click', event => {
     event.preventDefault();
     
     let score = 0;
-    const answer1 = getElement('[name=Q1]:checked');
-    const answer2 = getElement('[name=Q2]:checked');
-    const answer3 = getElement('[name=Q3]:checked');
-    const answer4 = getElement('[name=Q4]:checked');
-    const answer5 = getElement('[name=Q5]:checked');
-    const answers = [
-        answer1,
-        answer2,
-        answer3,
-        answer4,
-        answer5
-    ]
+    const answers = getAll('[type=radio]:checked', {from: form});
+
     //Going to your-result section.
     window.location = '#result-section';
 
