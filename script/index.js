@@ -81,9 +81,7 @@ resultBtn.addEventListener('click', event => {
     render(fragment, scoreNode);
     render(percent, fragment);
     //If score variable equals 100 then show secret button else hide it.
-    if(score === 100) secretBtn.classList.remove('hide');
-    //Reset form inputs.
-    form.reset();
+    score === 100 ? secretBtn.classList.remove('hide') : secretBtn.classList.add('hide'); 
 });
 //Reset button action    
 resetBtn.addEventListener('click', () => {
@@ -100,4 +98,6 @@ secretBtn.addEventListener('click', event => {
     secret.classList.remove('hide');
     //Going to your-result section.
     window.location = '#result-section';
+    //Reset form inputs.
+    form.reset();
 });
