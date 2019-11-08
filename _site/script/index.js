@@ -37,25 +37,17 @@ showClue('#Q3', '#C');
 showClue('#Q4', '#D');
 showClue('#Q5', '#E');
 
-//Result code     
-resultBtn.addEventListener('click', event => {
-    event.preventDefault();
-    
+//Result function    
+const evaluation = () => {
+    //variables
     let score = 0;
     const answers = getAll('[type=radio]:checked', {from: form});
-
-    //Going to your-result section.
-    window.location = '#result-section';
-
     //Verifying display state of result title and show it if hidden.
     if(resultTitle.classList.contains('hide')) resultTitle.classList.remove('hide');
-
     //Verifying display state of secret and hidding if showing.
     if(!secret.classList.contains('hide')) secret.classList.add('hide');
-
     //Cleaning result section if it has already been populated.
     clean(result, percent);
-
     //Verifying each answer and displaying result.
     answers.forEach(a => {
         const right = a.dataset.answer === a.value;
@@ -65,6 +57,7 @@ resultBtn.addEventListener('click', event => {
         h2.textContent = `Verifying your answer to ${a.dataset.qtitle}`;
         verdict.textContent = noAnswer ? `${a.value} Please answer all the questions.` : right ? `Congratulation, "${a.value}" is the right answer!` : `Sorry "${a.value}" is not the right answer. Try again.`;
         verdict.style.color = noAnswer ? 'initial' : right ? 'green' : 'red';
+        //Increment score variable by 20 for right answer.
         if(right) score += 20;
         render(fragment, h2);
         render(fragment, verdict);
@@ -83,23 +76,50 @@ resultBtn.addEventListener('click', event => {
     render(percent, fragment);
     //If score variable equals 100 then show secret button else hide it.
     score === 100 ? secretBtn.classList.remove('hide') : secretBtn.classList.add('hide');
-    score === 100 ? trophy.classList.remove('hide') : trophy.classList.add('hide'); 
-});
-//Reset button action    
-resetBtn.addEventListener('click', () => {
-    window.location.reload();
-});
-//Secret button action
-secretBtn.addEventListener('click', event => {
-    event.preventDefault();
+    score === 100 ? trophy.classList.remove('hide') : trophy.classList.add('hide');
+}
+//Secret button function
+const testimony = () => {
     //Removing content from result section.
     clean(result, percent);
+    //Hiding secret button and Result title.
     secretBtn.classList.add('hide');
     resultTitle.classList.add('hide');
     //Showing secret section
     secret.classList.remove('hide');
+}
+//Default state
+const defaultState = () => {
+    clean(result, percent);
+    secretBtn.classList.add('hide');
+    resultTitle.classList.remove('hide');
+    secret.classList.add('hide');
+    trophy.classList.add('hide');
+}
+//Reset button listener    
+resetBtn.addEventListener('click', () => {
+    window.location = '/';
+});
+//Result button listener
+resultBtn.addEventListener('click', event => {
+    event.preventDefault();
     //Going to your-result section.
-    window.location = '#result-section';
-    //Reset form inputs.
-    form.reset();
+    window.location.href = '#result-section';
+    return evaluation();
+});
+//Secret button listener
+secretBtn.addEventListener('click', event => {
+    event.preventDefault();
+    window.history.pushState('secret', 'secret', '/secret');
+    return testimony();
+});
+//Making it possible to go back and forth in window history somewhat.
+window.addEventListener('popstate', event => {
+    console.log(event.state);
+    switch(event.state) {
+        case 'secret':
+            return testimony();
+        default:
+            defaultState();
+    }
 });

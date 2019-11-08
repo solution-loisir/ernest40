@@ -137,6 +137,21 @@ summary {
   font-weight: 600;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-red {
+  color: red;
+}
+
 .content {
   width: 80%;
   margin: auto;
