@@ -111,6 +111,7 @@ resultBtn.addEventListener('click', event => {
 //Secret button listener
 secretBtn.addEventListener('click', event => {
     event.preventDefault();
+    form.reset();
     window.history.pushState('secret', 'secret', '/secret');
     return testimony();
 });
