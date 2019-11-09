@@ -26,9 +26,10 @@ const showClue = (id1, id2) => {
     const clue = getElement(id1);
     const clueBtn = getElement(id2);
     //Toggling visibility on click.
-    clueBtn.addEventListener('click', event => {
+    clueBtn.addEventListener('click', function(event) {
         event.preventDefault();
-        clue.classList.toggle('clue-visible');
+        clue.classList.add('clue-visible');
+        this.disabled = true;
     });
 }
 showClue('#Q1', '#A');
